@@ -13,24 +13,23 @@ public class StudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-    // Register a new student
-    public void registerStudent(Student student) {
-        studentRepository.save(student);
+    public Student registerStudent(Student student) {
+        // Could check if userName already exists, etc.
+        return studentRepository.save(student);
     }
 
-    // Login student with username and password
-    public Optional<Student> login(String userName, String password) {
+    public Student login(String userName, String password) {
         return studentRepository.findByUserNameAndPassword(userName, password);
     }
 
-    // Update student profile
-    public void updateStudent(Student student) {
-        studentRepository.save(student);
+    public Student findById(Long studentId) {
+        return studentRepository.findById(studentId).orElse(null);
     }
-
-    // Get student by ID
     public Student getStudentById(Long studentId) {
         return studentRepository.findById(studentId).orElse(null);
     }
 
+    public Student updateStudent(Student student) {
+        return studentRepository.save(student);
+    }
 }

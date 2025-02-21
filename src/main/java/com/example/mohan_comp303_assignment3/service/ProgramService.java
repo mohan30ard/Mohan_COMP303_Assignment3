@@ -13,13 +13,15 @@ public class ProgramService {
     @Autowired
     private ProgramRepository programRepository;
 
-    // Retrieve all programs
-    public List<Program> getAllPrograms() {
+    public List<Program> findAllPrograms() {
         return programRepository.findAll();
     }
 
-    // Retrieve program by code
-    public Program getProgramByCode(Long programCode) {
+    public Program findById(Long programCode) {
         return programRepository.findById(programCode).orElse(null);
+    }
+
+    public Program getProgramById(Long programId) {
+        return programRepository.findById(programId).orElse(null);
     }
 }

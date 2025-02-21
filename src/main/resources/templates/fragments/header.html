@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- Define the header fragment -->
+<div th:fragment="headerFragment">
+  <header>
+    <h1>Student Enrollment Portal</h1>
+    <nav>
+      <ul>
+        <!-- These links only show if 'student' is not null -->
+        <li th:if="${student != null}">
+          <a th:href="@{/dashboard(studentId=${student.studentId})}">Home</a>
+        </li>
+        <li th:if="${student != null}">
+          <a th:href="@{/profile/{studentId}(studentId=${student.studentId})}">Profile</a>
+        </li>
+        <li th:if="${student != null}">
+          <a th:href="@{/programs(studentId=${student.studentId})}">Programs</a>
+        </li>
+        <!-- Other links can always be shown -->
+        <li>
+          <a th:href="@{/enrollments(studentId=${student.studentId})}">Enrollments</a>
+        </li>
+        <li>
+          <a th:href="@{/logout}">Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+</body>
+</html>

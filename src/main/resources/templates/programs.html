@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Select a Program</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: headerFragment"></div>
+
+<header>
+  <h1>Available Programs</h1>
+</header>
+
+<section>
+  <p th:text="'Welcome, ' + ${student.firstName} + ' ' + ${student.lastName} + '!'"></p>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Program Name</th>
+      <th>Duration</th>
+      <th>Fee</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="prog : ${programs}">
+      <td th:text="${prog.programName}"></td>
+      <td th:text="${prog.duration}"></td>
+      <td th:text="${prog.fee}"></td>
+      <td>
+        <a th:href="@{/enrollments/checkout(studentId=${student.studentId}, programCode=${prog.programCode})}">
+          Enroll
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<footer>
+  <p>&copy; 2025 Student Enrollment Portal</p>
+</footer>
+</body>
+</html>

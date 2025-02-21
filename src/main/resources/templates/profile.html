@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Profile</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: headerFragment"></div>
+<header>
+  <h1>Profile</h1>
+</header>
+
+<section>
+  <p th:text="${message}"></p>
+  <form th:action="@{/profile/update}" th:object="${student}" method="post">
+    <input type="hidden" th:field="*{studentId}" />
+
+    <label>Address:</label>
+    <input type="text" th:field="*{address}" />
+
+    <label>City:</label>
+    <input type="text" th:field="*{city}" />
+
+    <label>Postal Code:</label>
+    <input type="text" th:field="*{postalCode}" />
+
+    <label>Phone Number:</label>
+    <input type="text" th:field="*{phoneNumber}" />
+
+    <button type="submit">Update</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Student Enrollment Portal</p>
+</footer>
+</body>
+</html>

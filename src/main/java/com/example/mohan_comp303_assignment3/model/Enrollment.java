@@ -2,27 +2,29 @@ package com.example.mohan_comp303_assignment3.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "enrollments")
 @Getter
 @Setter
-@Table(name = "enrollments")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Enrollment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long applicationNo;
+    private Long applicationNo;  // PK
 
     @ManyToOne
-    @JoinColumn(name = "student_id", referencedColumnName = "studentId")
-    private Student student;
+    @JoinColumn(name = "student_id", nullable = false)
+    private Student student;     // FK -> students
 
     @ManyToOne
-    @JoinColumn(name = "program_code", referencedColumnName = "programCode")
-    private Program program;
+    @JoinColumn(name = "program_code", nullable = false)
+    private Program program;     // FK -> programs
 
-    private String startDate;
-    private float amountPaid;
-    private String status; // e.g., Pending, Paid
+    private LocalDate startDate; // date of enrollment
+    private double amountPaid;   // fee paid
+    private String status;       // e.g., "Pending", "Paid"
 }

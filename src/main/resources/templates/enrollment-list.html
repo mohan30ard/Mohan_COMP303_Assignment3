@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Enrollment List</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<!-- Optionally include your common header/navigation fragment -->
+<div th:replace="fragments/header :: headerFragment"></div>
+
+<section>
+  <h1>Enrollment List</h1>
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Application No</th>
+      <th>Student Name</th>
+      <th>Program</th>
+      <th>Start Date</th>
+      <th>Amount Paid</th>
+      <th>Status</th>
+<!--      <th>Actions</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="enrollment : ${enrollments}">
+      <td th:text="${enrollment.applicationNo}"></td>
+      <td th:text="${enrollment.student.firstName} + ' ' + ${enrollment.student.lastName}"></td>
+      <td th:text="${enrollment.program.programName}"></td>
+      <td th:text="${enrollment.startDate}"></td>
+      <td th:text="${enrollment.amountPaid}"></td>
+      <td th:text="${enrollment.status}"></td>
+<!--      <td>-->
+<!--        <a th:href="@{'/enrollments/' + ${enrollment.applicationNo}}">View</a>-->
+<!--        <a th:href="@{'/enrollments/edit/' + ${enrollment.applicationNo}}">Edit</a>-->
+<!--        <a th:href="@{'/enrollments/delete/' + ${enrollment.applicationNo}}"-->
+<!--           onclick="return confirm('Are you sure you want to delete this enrollment?');">-->
+<!--          Delete-->
+<!--        </a>-->
+<!--      </td>-->
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Optionally include your common footer -->
+<footer>
+  <p>&copy; 2025 Student Enrollment Portal</p>
+</footer>
+</body>
+</html>

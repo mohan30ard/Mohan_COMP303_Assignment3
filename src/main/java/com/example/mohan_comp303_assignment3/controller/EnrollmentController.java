@@ -1,6 +1,5 @@
 package com.example.mohan_comp303_assignment3.controller;
 import com.example.mohan_comp303_assignment3.model.Enrollment;
-import com.example.mohan_comp303_assignment3.model.Program;
 import com.example.mohan_comp303_assignment3.model.Student;
 import com.example.mohan_comp303_assignment3.service.EnrollmentService;
 import com.example.mohan_comp303_assignment3.service.ProgramService;
@@ -10,8 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
+@RequestMapping("/enrollments")
 public class EnrollmentController {
+
     @Autowired
     private EnrollmentService enrollmentService;
 
@@ -21,27 +24,16 @@ public class EnrollmentController {
     @Autowired
     private ProgramService programService;
 
-    @PostMapping("/enroll")
-    public String enrollStudent(@RequestParam Long studentId, @RequestParam Long programCode, Model model) {
+    @GetMapping
+    public String listAllEnrollments(@RequestParam Long studentId, Model model) {
+        // Retrieve only enrollments for this student
+        List<Enrollment> enrollments = enrollmentService.getEnrollmentsByStudentId(studentId);
+        model.addAttribute("enrollments", enrollments);
+
+        // Retrieve and add the logged-in student so the header can use it
         Student student = studentService.getStudentById(studentId);
-        Program program = programService.getProgramByCode(programCode);
+        model.addAttribute("student", student);
 
-        if (student == null || program == null) {
-            model.addAttribute("error", "Invalid Student or Program");
-            return "programs";
-        }
-
-        Enrollment enrollment = new Enrollment();
-        enrollment.setStudent(student);
-        enrollment.setProgram(program);
-        enrollment.setStartDate("2025-03-01"); // Dummy start date
-        enrollment.setAmountPaid(program.getFee());
-        enrollment.setStatus("Paid");
-
-        enrollmentService.enrollStudent(enrollment);
-        model.addAttribute("message", "Enrollment Successful!");
-
-        return "confirmation";
+        return "enrollment-list"; // Thymeleaf template for listing enrollments
     }
 }
-

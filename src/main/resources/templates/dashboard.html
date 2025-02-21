@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: headerFragment"></div>
+
+
+<section>
+  <p>Welcome, <span th:text="${student.firstName}">User</span>!</p>
+  <p>This is your dashboard where you can view your profile, enroll in programs, and check your enrollment history.</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Student Enrollment Portal</p>
+</footer>
+</body>
+</html>

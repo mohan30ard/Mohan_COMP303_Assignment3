@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<div th:replace="fragments/header :: headerFragment"></div>
+<header>
+  <h1>Checkout</h1>
+</header>
+
+<section>
+  <form th:action="@{/enrollments/process}" th:object="${enrollment}" method="post">
+    <!-- Hidden fields if needed -->
+    <input type="hidden" th:field="*{student.studentId}" />
+    <input type="hidden" th:field="*{program.programCode}" />
+
+    <p th:text="'You are enrolling in ' + ${enrollment.program.programName}"></p>
+    <p th:text="'Fee: ' + ${enrollment.program.fee}"></p>
+
+    <label>Credit Card Number:</label>
+    <input type="text" name="cardNumber" required />
+
+    <label>Expiry (MM/YY):</label>
+    <input type="text" name="expiryDate" required />
+
+    <label>CVV:</label>
+    <input type="text" name="cvv" required />
+
+    <button type="submit">Pay</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Student Enrollment Portal</p>
+</footer>
+</body>
+</html>
