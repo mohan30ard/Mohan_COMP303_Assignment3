@@ -14,7 +14,7 @@
 <section>
   <p><strong>Application No:</strong> <span th:text="${enrollment.applicationNo}"></span></p>
   <p><strong>Program:</strong> <span th:text="${enrollment.program.programName}"></span></p>
-  <p><strong>Amount Paid:</strong> <span th:text="${enrollment.amountPaid}"></span></p>
+  <p><strong>Amount Paid:</strong> <span th:text="${enrollment.program.fee}"></span></p>
   <p><strong>Status:</strong> <span th:text="${enrollment.status}"></span></p>
   <p>Thank you! Your enrollment has been processed successfully.</p>
   <a th:href="@{/profile/{studentId}(studentId=${enrollment.student.studentId})}">

@@ -37,7 +37,7 @@ public class ProfileController {
         existing.setPostalCode(updatedStudent.getPostalCode());
         existing.setPhoneNumber(updatedStudent.getPhoneNumber());
 
-        // If you want them to update name, password, etc., do it here too
+      
         // existing.setFirstName(updatedStudent.getFirstName());
         // existing.setLastName(updatedStudent.getLastName());
 
