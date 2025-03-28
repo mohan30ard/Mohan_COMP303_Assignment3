@@ -1,4 +1,4 @@
-package com.example.mohan_comp303_assignment3;
+package com.example.N01620006_Mohan_Assignment2;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

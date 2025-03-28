@@ -1,5 +1,5 @@
-package com.example.mohan_comp303_assignment3.repository;
-import com.example.mohan_comp303_assignment3.model.Enrollment;
+package com.example.N01620006_Mohan_Assignment2.repository;
+import com.example.N01620006_Mohan_Assignment2.model.Enrollment;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

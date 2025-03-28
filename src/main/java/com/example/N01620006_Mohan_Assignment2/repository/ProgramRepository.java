@@ -1,5 +1,5 @@
-package com.example.mohan_comp303_assignment3.repository;
-import com.example.mohan_comp303_assignment3.model.Program;
+package com.example.N01620006_Mohan_Assignment2.repository;
+import com.example.N01620006_Mohan_Assignment2.model.Program;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProgramRepository extends JpaRepository<Program, Long> {

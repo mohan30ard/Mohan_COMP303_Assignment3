@@ -1,4 +1,4 @@
-package com.example.mohan_comp303_assignment3.model;
+package com.example.N01620006_Mohan_Assignment2.model;
 import jakarta.persistence.*;
 import lombok.*;
 

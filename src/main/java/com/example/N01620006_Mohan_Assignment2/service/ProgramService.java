@@ -1,7 +1,7 @@
-package com.example.mohan_comp303_assignment3.service;
+package com.example.N01620006_Mohan_Assignment2.service;
 
-import com.example.mohan_comp303_assignment3.model.Program;
-import com.example.mohan_comp303_assignment3.repository.ProgramRepository;
+import com.example.N01620006_Mohan_Assignment2.model.Program;
+import com.example.N01620006_Mohan_Assignment2.repository.ProgramRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

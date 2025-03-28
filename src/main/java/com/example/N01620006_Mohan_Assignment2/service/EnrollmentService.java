@@ -1,6 +1,6 @@
-package com.example.mohan_comp303_assignment3.service;
-import com.example.mohan_comp303_assignment3.model.Enrollment;
-import com.example.mohan_comp303_assignment3.repository.EnrollmentRepository;
+package com.example.N01620006_Mohan_Assignment2.service;
+import com.example.N01620006_Mohan_Assignment2.model.Enrollment;
+import com.example.N01620006_Mohan_Assignment2.repository.EnrollmentRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 

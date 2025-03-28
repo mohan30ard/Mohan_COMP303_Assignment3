@@ -1,10 +1,10 @@
-package com.example.mohan_comp303_assignment3.controller;
-import com.example.mohan_comp303_assignment3.model.Enrollment;
-import com.example.mohan_comp303_assignment3.model.Program;
-import com.example.mohan_comp303_assignment3.model.Student;
-import com.example.mohan_comp303_assignment3.service.EnrollmentService;
-import com.example.mohan_comp303_assignment3.service.ProgramService;
-import com.example.mohan_comp303_assignment3.service.StudentService;
+package com.example.N01620006_Mohan_Assignment2.controller;
+import com.example.N01620006_Mohan_Assignment2.model.Enrollment;
+import com.example.N01620006_Mohan_Assignment2.model.Program;
+import com.example.N01620006_Mohan_Assignment2.model.Student;
+import com.example.N01620006_Mohan_Assignment2.service.EnrollmentService;
+import com.example.N01620006_Mohan_Assignment2.service.ProgramService;
+import com.example.N01620006_Mohan_Assignment2.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
